@@ -35,7 +35,7 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【东东工厂】'
+      - name: '运行 【总裁送好礼】'
         run: |
           node jd_babelDiy.js
         env:
