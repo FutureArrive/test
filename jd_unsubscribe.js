@@ -296,7 +296,7 @@ function TotalBean() {
               $.isLogin = false; //cookie过期
               return
             }
-            if(data['base'].nickname){
+            if($.nickName && data['base'].nickname){
               $.nickName = data['base'].nickname;
             }
           } else {
