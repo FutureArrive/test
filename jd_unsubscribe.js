@@ -96,6 +96,7 @@ function showMsg() {
   }
 }
 function unsubscribeGoods() {
+  console.log(`开始取关商品-------`)
   return new Promise(async (resolve) => {
     let followGoods = await getFollowGoods();
     if (followGoods.iRet === '0') {
