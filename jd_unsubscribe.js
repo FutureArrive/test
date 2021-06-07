@@ -311,22 +311,26 @@ function TotalBean() {
 }
 function requireConfig() {
   return new Promise(resolve => {
-    if ($.isNode() && process.env.UN_SUBSCRIBES) {
-      if (process.env.UN_SUBSCRIBES.indexOf('&') > -1) {
-        $.UN_SUBSCRIBES = process.env.UN_SUBSCRIBES.split('&');
-      } else if (process.env.UN_SUBSCRIBES.indexOf('\n') > -1) {
-        $.UN_SUBSCRIBES = process.env.UN_SUBSCRIBES.split('\n');
-      } else if (process.env.UN_SUBSCRIBES.indexOf('\\n') > -1) {
-        $.UN_SUBSCRIBES = process.env.UN_SUBSCRIBES.split('\\n');
-      } else {
-        $.UN_SUBSCRIBES = process.env.UN_SUBSCRIBES.split();
-      }
-      console.log(`您secret设置的取关参数:\n${JSON.stringify($.UN_SUBSCRIBES)}`)
-      goodPageSize = $.UN_SUBSCRIBES[0] || goodPageSize;
-      shopPageSize = $.UN_SUBSCRIBES[1] || shopPageSize;
-      stopGoods = $.UN_SUBSCRIBES[2] || stopGoods;
-      stopShop = $.UN_SUBSCRIBES[3] || stopShop;
-    }
+    // if ($.isNode() && process.env.UN_SUBSCRIBES) {
+    //   if (process.env.UN_SUBSCRIBES.indexOf('&') > -1) {
+    //     $.UN_SUBSCRIBES = process.env.UN_SUBSCRIBES.split('&');
+    //   } else if (process.env.UN_SUBSCRIBES.indexOf('\n') > -1) {
+    //     $.UN_SUBSCRIBES = process.env.UN_SUBSCRIBES.split('\n');
+    //   } else if (process.env.UN_SUBSCRIBES.indexOf('\\n') > -1) {
+    //     $.UN_SUBSCRIBES = process.env.UN_SUBSCRIBES.split('\\n');
+    //   } else {
+    //     $.UN_SUBSCRIBES = process.env.UN_SUBSCRIBES.split();
+    //   }
+    //   console.log(`您secret设置的取关参数:\n${JSON.stringify($.UN_SUBSCRIBES)}`)
+    //   goodPageSize = $.UN_SUBSCRIBES[0] || goodPageSize;
+    //   shopPageSize = $.UN_SUBSCRIBES[1] || shopPageSize;
+    //   stopGoods = $.UN_SUBSCRIBES[2] || stopGoods;
+    //   stopShop = $.UN_SUBSCRIBES[3] || stopShop;
+    // }
+      goodPageSize = 50;
+      shopPageSize = 50;
+      stopGoods = '';
+      stopShop = '';
     resolve()
   })
 }
