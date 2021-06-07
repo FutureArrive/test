@@ -80,7 +80,7 @@ const JD_API_HOST = 'https://wq.jd.com/fav';
     })
 async function jdUnsubscribe(doubleKey) {
   await Promise.all([
-    unsubscribeGoods(doubleKey),
+    unsubscribeGoods(),
     unsubscribeShops()
   ])
   await Promise.all([
